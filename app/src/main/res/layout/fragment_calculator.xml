@@ -4,14 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="5dp"
     android:orientation="vertical"
     tools:context=".Fragments.CalculatorFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginBottom="16dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
         android:orientation="vertical">
 
         <EditText
@@ -20,7 +29,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:text="2+3"
-
             android:textSize="22sp"
             tools:text="43+2+44324+234+*234" />
 
@@ -36,46 +44,55 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/marginBetweenCalcButtons"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/btnClear"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="C" />
+                android:gravity="center"
+                android:text="C"
+                android:textSize="@dimen/textSize" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnNegativePositive"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="+/-" />
 
-            <Button
+                android:gravity="center"
+                android:text="+/-"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btnPercentage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="%" />
 
-            <Button
+                android:gravity="center"
+                android:text="%"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btnDivision"
                 android:layout_width="match_parent"
+
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="/" />
+                android:gravity="center"
+                android:text="/"
+                android:textSize="@dimen/textSize" />
 
 
         </LinearLayout>
@@ -83,40 +100,49 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/marginBetweenCalcButtons"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/btn7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="7" />
 
-            <Button
+                android:gravity="center"
+                android:text="7"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btn8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="8" />
 
-            <Button
+                android:gravity="center"
+                android:text="8"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btn9"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="9" />
 
-            <Button
+                android:gravity="center"
+                android:text="9"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btnMultiplication"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="x" />
+
+                android:gravity="center"
+                android:text="x"
+                android:textSize="@dimen/textSize" />
 
 
         </LinearLayout>
@@ -124,39 +150,49 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/marginBetweenCalcButtons"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/btn4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="4" />
 
-            <Button
+                android:gravity="center"
+                android:text="4"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btn5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="5" />
 
-            <Button
+                android:gravity="center"
+                android:text="5"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btn6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="6" />
 
-            <Button
+                android:gravity="center"
+                android:text="6"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btnSubtraction"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="-" />
+                android:gravity="center"
+                android:text="-"
+                android:textSize="@dimen/textSize" />
 
 
         </LinearLayout>
@@ -164,40 +200,49 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/marginBetweenCalcButtons"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/btn1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="1" />
 
-            <Button
+                android:gravity="center"
+                android:text="1"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btn2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="2" />
 
-            <Button
+                android:gravity="center"
+                android:text="2"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btn3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="3" />
 
-            <Button
+                android:gravity="center"
+                android:text="3"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btnAddition"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="+" />
+
+                android:gravity="center"
+                android:text="+"
+                android:textSize="@dimen/textSize" />
 
 
         </LinearLayout>
@@ -205,79 +250,42 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/marginBetweenCalcButtons"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/btn0"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="0" />
 
-            <Button
+                android:gravity="center"
+                android:text="0"
+                android:textSize="@dimen/textSize" />
+
+            <TextView
                 android:id="@+id/btnDecimal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_weight="1"
-                android:text="." />
+
+                android:gravity="center"
+                android:text="."
+                android:textSize="@dimen/textSize" />
 
 
             <Button
                 android:id="@+id/btnEquals"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="=" />
+                android:layout_weight="0.67"
+                android:gravity="center"
+                android:text="="
+                android:textSize="@dimen/textSize" />
 
 
         </LinearLayout>
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tv7"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:hint="7"-->
-<!--                android:textSize="23dp" />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:hint="9"-->
-<!--                android:textSize="23dp" />-->
-
-
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:hint="8"-->
-<!--                android:textSize="23dp" />-->
-
-
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:hint="1"-->
-<!--                android:textSize="23dp" />-->
-
-<!--        </LinearLayout>-->
-
-
 
     </LinearLayout>
 
