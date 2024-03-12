@@ -4,4 +4,22 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="ResultText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="InputText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="operators">
+        <item name="android:textColor">@color/purple</item>
+    </style>
+    <style name="btnEqualStyle">
+        <item name="backgroundTint">@color/btnGreen</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="dialpad">
+        <item name="android:background">#1c1c1c</item>
+    </style>
 </resources>

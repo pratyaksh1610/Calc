@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         calculatorFragment = CalculatorFragment()
         loadFragment(calculatorFragment, CalculatorFragment()::class.java.name)
 
-        Toast.makeText(this, "Reached main activity", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "Reached main activity", Toast.LENGTH_SHORT).show()
     }
 
     private fun loadFragment(fragment: Fragment, tag: String? = null) {

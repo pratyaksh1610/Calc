@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="textSize">28sp</dimen>
+
+    <dimen name="textSize">33sp</dimen>
+
+    <dimen name="textSizeInput">32sp</dimen>
+    <dimen name="textSizeResult">48sp</dimen>
     <dimen name="marginBetweenCalcButtons">0dp</dimen>
 </resources>
