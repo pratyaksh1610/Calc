@@ -37,18 +37,17 @@ class CalculatorFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentCalculatorBinding.inflate(layoutInflater, container, false)
 
-        setInputOutputOnLightDarkModeConfigChange()
+        restoreOnConfigChange()
 
         binding.etInput.addTextChangedListener(textWatcher)
         evaluateExpression()
         setLightDarkModeIcon()
-
         binding.btnClear.setOnClickListener {
             clearInput()
         }
         binding.btnEquals.setOnClickListener {
             evaluateExpression()
-            binding.etInput.setText(binding.tvOutput.text.toString())
+//            binding.etInput.setText(binding.tvOutput.text.toString())
         }
         binding.btn0.setOnClickListener {
             appendToInput("0")
@@ -97,18 +96,23 @@ class CalculatorFragment : Fragment() {
             appendToInput("-")
         }
         binding.btnNegativePositive.setOnClickListener {
-            var res = binding.tvOutput.text.toString()
-            if (res[0] == '-') {
-                res = res.removePrefix("-")
-            } else {
-                res = "-$res"
+            if (binding.tvOutput.text.toString().isNotEmpty()) {
+                var res = binding.tvOutput.text.toString()
+                if (res[0] == '-') {
+                    res = res.removePrefix("-")
+                } else {
+                    res = "-$res"
+                }
+                binding.tvOutput.text = res
+                saveInputOutput()
             }
-            binding.tvOutput.text = res
         }
         binding.btnPercentage.setOnClickListener {
-            var res = binding.tvOutput.text.toString().toDouble()
-            res /= 100
-            binding.tvOutput.text = res.toString()
+            if (binding.tvOutput.text.toString().isNotEmpty()) {
+                var res = binding.tvOutput.text.toString().toDouble()
+                res /= 100
+                binding.tvOutput.text = res.toString()
+            }
         }
         binding.ivNightLightMode.setOnClickListener {
             saveInputOutput()
@@ -118,7 +122,13 @@ class CalculatorFragment : Fragment() {
         return binding.root
     }
 
-    private fun setInputOutputOnLightDarkModeConfigChange() {
+    private fun restoreOnConfigChange() {
+        val isNightModeEnabled = !SharedPref(requireContext()).getIsNightModeEnabled()
+        if (isNightModeEnabled) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+//        Log.d("night", isNightModeEnabled.toString())
+//        Toast.makeText(requireContext(), isNightModeEnabled.toString(), Toast.LENGTH_SHORT).show()
         binding.etInput.setText(SharedPref(requireContext()).getInput())
         binding.tvOutput.text = SharedPref(requireContext()).getOutput()
     }
@@ -138,6 +148,7 @@ class CalculatorFragment : Fragment() {
 
     private fun configureMode() {
         val isNightModeOn = isNightModeEnabled(resources.configuration)
+        SharedPref(requireContext()).saveIsNightModeEnabled(isNightModeOn)
         if (isNightModeOn) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             Log.d("mode", "yes")
@@ -173,6 +184,7 @@ class CalculatorFragment : Fragment() {
     private fun clearInput() {
         binding.etInput.setText("")
         binding.tvOutput.text = ""
+        saveInputOutput()
     }
 
     private fun isNightModeEnabled(configuration: Configuration): Boolean {

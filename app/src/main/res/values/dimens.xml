@@ -2,7 +2,7 @@
 <resources>
 
 
-    <dimen name="textSize">33sp</dimen>
+    <dimen name="textSize">30sp</dimen>
 
     <dimen name="textSizeInput">32sp</dimen>
     <dimen name="textSizeResult">48sp</dimen>

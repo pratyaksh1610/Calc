@@ -6,6 +6,7 @@ class SharedPref(context: Context) {
 
     private val inputTag = "input"
     private val outputTag = "output"
+    private val nightModeTag = "nightModeTag"
     private val sharedPreferences = context.getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
     private val editor = sharedPreferences.edit()
 
@@ -22,6 +23,15 @@ class SharedPref(context: Context) {
             apply()
         }
     }
+
+    fun saveIsNightModeEnabled(b: Boolean) {
+        editor.apply {
+            putBoolean(nightModeTag, b)
+            apply()
+        }
+    }
+
+    fun getIsNightModeEnabled(): Boolean = sharedPreferences.getBoolean(nightModeTag, false)
 
     fun getInput(): String = sharedPreferences.getString(inputTag, "0").toString()
     fun getOutput(): String = sharedPreferences.getString(outputTag, "0").toString()
