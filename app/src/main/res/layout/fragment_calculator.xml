@@ -43,9 +43,9 @@
             android:cursorVisible="false"
             android:focusable="false"
             android:gravity="right"
-            android:hint="0"
+            android:singleLine="true"
             android:textSize="@dimen/textSizeInput"
-            tools:text="43+2+44324+234+*234" />
+            tools:text="43+2+44324+234*234" />
 
         <TextView
             android:id="@+id/tvOutput"
@@ -53,8 +53,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:singleLine="true"
             android:textSize="@dimen/textSizeResult"
-           android:hint="0" />
+            tools:text="432" />
     </LinearLayout>
 
 

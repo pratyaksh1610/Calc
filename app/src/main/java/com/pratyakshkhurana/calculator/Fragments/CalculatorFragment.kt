@@ -132,7 +132,6 @@ class CalculatorFragment : Fragment() {
         if (isNightModeEnabled(resources.configuration)) {
             binding.ivNightLightMode.setImageResource(R.drawable.baseline_light_mode_24)
         } else {
-//            binding.ivNightLightMode.setImageResource(R.drawable.night_mode)
             binding.ivNightLightMode.setImageResource(R.drawable.baseline_dark_mode_24)
         }
     }
@@ -161,6 +160,7 @@ class CalculatorFragment : Fragment() {
                 val eval = ExpressionBuilder(binding.etInput.text.toString()).build()
                 val res = eval.evaluate()
                 setResult(res.toString())
+                saveInputOutput()
             } catch (_: Exception) {
             }
         }
