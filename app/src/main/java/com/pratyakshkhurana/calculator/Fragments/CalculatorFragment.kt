@@ -84,7 +84,7 @@ class CalculatorFragment : Fragment() {
             appendToInput(".")
         }
         binding.btnMultiplication.setOnClickListener {
-            appendToInput("*")
+            appendToInput("x")
         }
         binding.btnDivision.setOnClickListener {
             appendToInput("/")
@@ -164,11 +164,11 @@ class CalculatorFragment : Fragment() {
     }
 
     private fun evaluateExpression() {
-        if (binding.etInput.text.toString().isNotEmpty() && !binding.etInput.text.toString()
-            .startsWith("0")
+        val replaceCharacter = binding.etInput.text.toString().replace('x', '*')
+        if (replaceCharacter.isNotEmpty() && !replaceCharacter.startsWith("0")
         ) {
             try {
-                val eval = ExpressionBuilder(binding.etInput.text.toString()).build()
+                val eval = ExpressionBuilder(replaceCharacter).build()
                 val res = eval.evaluate()
                 setResult(res.toString())
                 saveInputOutput()
