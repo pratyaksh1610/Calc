@@ -33,6 +33,6 @@ class SharedPref(context: Context) {
 
     fun getIsNightModeEnabled(): Boolean = sharedPreferences.getBoolean(nightModeTag, false)
 
-    fun getInput(): String = sharedPreferences.getString(inputTag, "0").toString()
-    fun getOutput(): String = sharedPreferences.getString(outputTag, "0").toString()
+    fun getInput(): String = sharedPreferences.getString(inputTag, "").toString()
+    fun getOutput(): String = sharedPreferences.getString(outputTag, "").toString()
 }
