@@ -23,6 +23,6 @@ class SharedPref(context: Context) {
         }
     }
 
-    fun getOutput(): String = sharedPreferences.getString(inputTag, "0").toString()
-    fun getInput(): String = sharedPreferences.getString(outputTag, "0").toString()
+    fun getInput(): String = sharedPreferences.getString(inputTag, "0").toString()
+    fun getOutput(): String = sharedPreferences.getString(outputTag, "0").toString()
 }
