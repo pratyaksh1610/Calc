@@ -1,5 +1,11 @@
 # :rocket: Calculator  
 
+## Try app ♥️
+***You can Install the app below 👇*** <br> 
+<p><a href="https://play.google.com/store/apps/details?id=com.pratyakshkhurana.calculator">
+<img src="https://github.com/pratyaksh1610/Calc/assets/76740999/94cc9d21-6fae-469c-8a04-383129cef0c0" width="220" height="100">
+</a></p>
+
 - Developed an android app using Kotlin programming language.
 - Basic mathematical operations.
 - Live preview of result using text watcher.
